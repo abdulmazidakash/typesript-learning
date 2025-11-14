@@ -1,3 +1,5 @@
+// node --watch index.ts ==============
+
 // utilities types
 
 type Product = {
