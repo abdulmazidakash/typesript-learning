@@ -1,0 +1,41 @@
+// type guard
+
+// in typeof 
+
+type AlphaNeumeric = number | string;
+
+const add = (num1: AlphaNeumeric, num2: AlphaNeumeric) =>{
+	if(typeof num1 === 'number' && typeof num2 === 'number'){
+		return num1 + num2;
+	}else{
+		num1.toString() + num2.toString();
+	}
+};
+
+// add(2, 3) // 5
+// add(2, '2') // 22
+// add('2', 2)
+
+
+// in guard 
+
+type NormalUser = {
+	name: string;
+};
+
+type AdminUser = {
+	name: string;
+	role: string;
+};
+
+const getUserInfo = (user: NormalUser | AdminUser) =>{
+	if('role' in user){
+		console.log(`${user.name} and his role: ${user.role}`);
+	}else{
+		console.log(`${user.name}`);
+	}
+
+};
+
+// getUserInfo({name: 'normal'})
+getUserInfo({name: 'normal', role: 'admin'})
