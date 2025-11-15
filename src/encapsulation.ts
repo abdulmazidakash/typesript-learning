@@ -32,4 +32,4 @@ class StudentBankAccount extends BankAccount {
 
 
 const mezbaBhaiAccount = new BankAccount(123, 'Mezba', 12);
-mezbaBhaiAccount.addBalance(34);
+mezbaBhaiAccount.addBalance(34); // Property 'addBalance' is private and only accessible within class 'BankAccount'.
