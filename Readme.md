@@ -474,7 +474,4 @@ ts-node src/classes.ts
 *Textile Engineer & Beginner Full Stack Web Developer*
 Passionate about **problem solving**, **JavaScript**, and **TypeScript** fundamentals.
 
-```
-
----
 
