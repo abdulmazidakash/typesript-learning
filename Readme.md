@@ -1,4 +1,3 @@
-````markdown
 # 🧠 TypeScript Concepts & OOP Practice
 
 This repository is my personal **TypeScript learning playground**.  
