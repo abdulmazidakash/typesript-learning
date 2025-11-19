@@ -120,4 +120,128 @@ const evenOrOddSecond = (num: number) =>{
 
 const mapOddOrEven = (numbers: number[]) => numbers.map((num)=>evenOrOddSecond(num));
 
-console.log(mapOddOrEven([4, 6, 7, 8, 9]));
+// console.log(mapOddOrEven([4, 6, 7, 8, 9]));
+type GenericArray<T> = Array<T>;
+
+type User1 = {
+	name: string; 
+	age: number;
+}
+
+const userList: User1[] = [
+	{
+		name: 'Mr. X',
+		age: 23,
+	},
+	{
+		name: 'Mr. Y',
+		age: 32,
+	}
+];
+
+
+interface User2 {
+	name: string;
+	age: number;
+};
+
+
+const user2: User2 = {
+	name: 'shakib',
+	age: 32,
+};
+
+// generic array =============================
+
+type TGenericArray<T> = Array<T>
+// const numberGeneric: number[] = [2, 4, 5, 4, 2];
+// const numberGeneric: Array<number> = [2, 4, 5, 4, 2];
+const numberGeneric: TGenericArray<number> = [2, 4, 5, 4, 2];
+
+// const stringGeneric: string[] = ['shakib', 'tamim', 'musfiq'];
+const stringGeneric: TGenericArray<string> = ['shakib', 'tamim', 'musfiq'];
+
+// const booleanGeneric: boolean[] = [true, false, true, false];
+const booleanGeneric: TGenericArray<boolean> = [true, false, true, false];
+
+// generic tuple =========================
+type TTuple<X, Y> = [X, Y];
+
+const tuple: TTuple<string, string> = ['shakib', 'tamim'];
+
+const tupleNumber: TTuple<number, number> = [3, 4];
+
+
+// generic object
+type TGenericArrayOfObject<T> = Array<T>
+type TGenericUser = {
+	name: string;
+	age: number;
+}
+
+const genericUser: TGenericArrayOfObject<TGenericUser>  = [
+	{ 
+		name: 'sk',
+		age: 3
+	},
+	{
+		name: 'aksh',
+		age: 3,
+	}
+];
+
+// generic interface ===================
+
+interface Developer<T, X = null> {
+	name: string;
+	salary: number;
+	device: {
+		brand: string;
+		model: string;
+	};
+	smartWatch: T ;
+	bike?: X ;
+};
+
+interface BrandCharaWatch {
+	heartRate: string;
+	stopWatch: boolean;
+};
+
+
+
+const richDeveloper: Developer<BrandCharaWatch, {speed: string; engine: string}> = {
+	name: 'Mr. Poor',
+	salary: 2000,
+	device: {
+		brand: 'Lenovo',
+		model: 'A21',
+	},
+	smartWatch:{
+		heartRate: '423',
+		stopWatch: true,
+	},
+	bike: {
+		speed: 'fsdrf',
+		engine: '200cc'
+	}
+
+};
+
+const poorDeveloper: Developer<BrandCharaWatch> = {
+	name: 'Mr. Poor',
+	salary: 2000,
+	device: {
+		brand: 'Lenovo',
+		model: 'A21',
+	},
+	smartWatch:{
+		heartRate: '423',
+		stopWatch: true,
+	}
+
+};
+
+const createArrayWithString = (value: string) => [value];
+
+
